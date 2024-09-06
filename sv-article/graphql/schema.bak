@@ -1,0 +1,30 @@
+scalar DateTime
+    @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+extend schema
+    @link(
+        url: "https://specs.apollo.dev/federation/v2.3"
+        import: ["@key", "@shareable", "@extends", "@external", "@requires"]
+    )
+
+type Query {
+    posts(title: String @where(operator: "like")): [Post!]!
+        @paginate(defaultCount: 10)
+}
+
+type Post @key(fields: "id") {
+    id: ID! @shareable
+    title: String!
+    slug: String!
+    content: String!
+    image: String
+    is_published: Boolean!
+    user_id: ID!
+    created_at: DateTime!
+    updated_at: DateTime!
+    user: User!
+}
+
+type User @key(fields: "id") {
+    id: ID!
+}

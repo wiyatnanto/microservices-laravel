@@ -1,0 +1,16 @@
+{
+  "name": "bfe-stjs",
+  "version": "1.0.0",
+  "description": "BFE with STJS",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wiyatnanto",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "express": "^4.19.2",
+    "stjs": "^0.0.5"
+  }
+}
